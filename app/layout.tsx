@@ -1,14 +1,16 @@
-import { Geist, Geist_Mono, Noto_Sans } from "next/font/google"
+import { Poppins, Noto_Sans } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import NavMenu from "@/features/navigation/components/NavMenu"
 
-const notoSans = Noto_Sans({variable:'--font-sans'})
+const notoSans = Noto_Sans({ variable: "--font-noto" })
 
-const fontMono = Geist_Mono({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 })
 
 export default function RootLayout({
@@ -20,10 +22,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable)}
+      className={cn("antialiased", poppins.className, notoSans.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="relative p-5">
+        <ThemeProvider>
+          <NavMenu />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
