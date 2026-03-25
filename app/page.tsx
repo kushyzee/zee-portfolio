@@ -1,12 +1,11 @@
 import CustomButton from "@/components/CustomButton"
-import { ArrowRight } from "lucide-react"
 import zee from "@/assets/images/zee.png"
 import Image from "next/image"
-import Link from "next/link"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh flex-col items-center pt-20 pb-32">
+    <main className="flex min-h-svh flex-col items-center pt-20">
       <div className="relative h-60 w-60 rounded-full border-4 border-secondary">
         <Image
           src={zee}
@@ -26,12 +25,13 @@ export default function Page() {
           interactive web experiences. I focus on performance, usability, and
           building products that people actually enjoy using
         </p>
-        <Link href="/projects">
-          <CustomButton text="SEE PROJECTS">
-            <ArrowRight />
-          </CustomButton>
-        </Link>
+        <CustomButton
+          isInLink
+          link="/projects"
+          text="SEE PROJECTS"
+          icon={faArrowRight}
+        />
       </div>
-    </div>
+    </main>
   )
 }
