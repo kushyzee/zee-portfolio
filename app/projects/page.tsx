@@ -12,6 +12,7 @@ import ProjectCardTrigger, {
   ProjectCardDialogFooter,
   ProjectCardDialogHeader,
 } from "@/features/projects/components/ProjectCard"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 export default function Page() {
   return (
@@ -19,7 +20,14 @@ export default function Page() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3">
         {projects.map((item, index) => (
           <Dialog key={item.name}>
-            <DialogTrigger>
+            <DialogTrigger className="relative rounded-xl">
+              <GlowingEffect
+                spread={80}
+                glow={true}
+                disabled={false}
+                proximity={90}
+                borderWidth={4}
+              />
               <ProjectCardTrigger
                 name={item.name}
                 desc={item.desc}

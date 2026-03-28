@@ -5,12 +5,12 @@ import { Button, buttonVariants } from "./ui/button"
 import { cn } from "@/lib/utils"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
 interface CustomButtonProps {
-  text: string
+  text?: string
   link?: string
   isInLink?: boolean
   isOutLink?: boolean
+  isSubmitting?: boolean
   icon: IconProp
 }
 
@@ -19,6 +19,7 @@ export default function CustomButton({
   link,
   isInLink,
   isOutLink,
+  isSubmitting,
   icon,
 }: CustomButtonProps) {
   const buttonClass =
@@ -55,7 +56,7 @@ export default function CustomButton({
           buttonClass
         )}
       >
-        {text}{" "}
+        {text}
         <div className={iconClass}>
           <FontAwesomeIcon icon={icon} />
         </div>
@@ -64,10 +65,16 @@ export default function CustomButton({
   }
 
   return (
-    <Button variant="outline" size="lg" className={buttonClass}>
+    <Button
+      disabled={isSubmitting}
+      variant="outline"
+      size="lg"
+      className={buttonClass}
+      type={text === "SEND MESSAGE" ? "submit" : "button"}
+    >
       {text}
       <div className={iconClass}>
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} beat={isSubmitting} />
       </div>
     </Button>
   )

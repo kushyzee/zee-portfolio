@@ -41,7 +41,7 @@ export default function ProjectCardTrigger({
   index,
 }: ProjectCardTriggerProps) {
   return (
-    <Card className="group cursor-pointer text-left shadow-primary/60 transition-shadow duration-300 ease-linear hover:shadow-lg">
+    <Card className="group cursor-pointer text-left shadow-md transition-shadow duration-300 ease-linear">
       <CardHeader className="-mt-6 w-full px-0">
         <div className="h-52 w-full">
           <Image

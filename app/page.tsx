@@ -2,7 +2,16 @@ import CustomButton from "@/components/CustomButton"
 import zee from "@/assets/images/zee.png"
 import Image from "next/image"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { TypewriterEffect } from "@/components/ui/typewriter-effect"
 
+const words = [
+  {
+    text: "FRONTEND",
+  },
+  {
+    text: "DEVELOPER",
+  },
+]
 export default function Page() {
   return (
     <main className="flex min-h-svh flex-col items-center pt-20">
@@ -18,7 +27,11 @@ export default function Page() {
       <div className="mt-8 text-center">
         <div className="font-bold">
           <h1 className="text-3xl text-primary">ARINZE OGBUNIBA.</h1>
-          <p className="text-2xl">FRONTEND DEVELOPER</p>
+          <TypewriterEffect
+            words={words}
+            className="text-2xl"
+            cursorClassName="bg-primary h-[18]"
+          />
         </div>
         <p className="mt-4 mb-8 max-w-96 font-noto text-muted-foreground">
           I&apos;m a frontend developer who enjoys turning ideas into clean,

@@ -1,4 +1,5 @@
 import PageWrapper from "@/components/PageWrapper"
+import ContactForm from "@/features/contact/components/ContactForm"
 import SocialMediaGroup from "@/features/contact/components/SocialMediaGroup"
 import {
   faEnvelopeOpen,
@@ -52,6 +53,9 @@ export default function Page() {
         </div>
 
         <SocialMediaGroup />
+        <div className="mt-8">
+          <ContactForm />
+        </div>
       </div>
     </PageWrapper>
   )

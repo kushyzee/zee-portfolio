@@ -1,5 +1,6 @@
 import CustomButton from "@/components/CustomButton"
 import PageWrapper from "@/components/PageWrapper"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 import { techStack } from "@/lib/constants"
 import { faDownload } from "@fortawesome/free-solid-svg-icons"
 import Image from "next/image"
@@ -35,9 +36,16 @@ export default function Page() {
         <div className="mt-3 grid grid-cols-2 gap-3">
           {techStack.map((tech) => (
             <div
-              className="inline-flex min-h-24 items-center justify-center gap-2 rounded-xl border border-primary/30 px-3 shadow-md shadow-primary/20"
+              className="relative inline-flex min-h-24 items-center justify-center gap-2 rounded-xl border border-primary/30 px-3 shadow shadow-primary/20"
               key={tech.name}
             >
+              <GlowingEffect
+                spread={80}
+                glow={true}
+                disabled={false}
+                proximity={90}
+                borderWidth={2}
+              />
               <div className="h-8 w-8">
                 <Image
                   src={tech.logo}
