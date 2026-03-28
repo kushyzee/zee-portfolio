@@ -27,8 +27,8 @@ interface ProjectCardDialogFooterProps {
 }
 
 const getExcerpt = (text: string) => {
-  if (text.length > 80) {
-    return text.substring(0, 80) + "..."
+  if (text.length > 75) {
+    return text.substring(0, 75) + "..."
   }
 
   return text
@@ -41,7 +41,7 @@ export default function ProjectCardTrigger({
   index,
 }: ProjectCardTriggerProps) {
   return (
-    <Card className="group cursor-pointer text-left shadow-md transition-shadow duration-300 ease-linear">
+    <Card className="group h-full cursor-pointer text-left shadow-md transition-shadow duration-300 ease-linear">
       <CardHeader className="-mt-6 w-full px-0">
         <div className="h-52 w-full">
           <Image

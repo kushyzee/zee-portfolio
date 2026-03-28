@@ -31,11 +31,11 @@ export default function Page() {
           </h1>
           <TypewriterEffect
             words={words}
-            className="text-2xl md:text-4xl"
+            className="text-2xl md:text-3xl"
             cursorClassName="bg-primary h-[18]"
           />
         </div>
-        <p className="mt-4 mb-8 max-w-96 font-noto text-muted-foreground md:text-lg">
+        <p className="mt-4 mb-8 max-w-96 font-noto text-muted-foreground md:max-w-[400px] md:text-lg">
           I&apos;m a frontend developer who enjoys turning ideas into clean,
           interactive web experiences. I focus on performance, usability, and
           building products that people actually enjoy using
