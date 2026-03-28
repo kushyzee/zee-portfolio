@@ -15,6 +15,7 @@ import CustomButton from "@/components/CustomButton"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import { Textarea } from "@/components/ui/textarea"
 import { contactFormAction } from "../action"
+import { useRouter } from "next/navigation"
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, { error: "Name is required" }),
@@ -49,12 +50,11 @@ const formFields: FormFields = [
 ]
 
 export default function ContactForm() {
+  const router = useRouter()
+
   const form = useForm({
     validators: {
-      onBlur: contactFormSchema,
-      // onSubmitAsync: async ({ value }) => {
-      //   console.log(value) 8264342368
-      // },
+      onChange: contactFormSchema,
     },
     defaultValues: {
       name: "",
@@ -67,7 +67,12 @@ export default function ContactForm() {
         access_key: "97374601-3fc2-44dd-a9b2-5be3ace960e6",
       }
 
-      contactFormAction(data)
+      const result = await contactFormAction(data)
+      if (result?.success) {
+        router.push("/")
+      } else {
+        alert(result.error || "Failed to submit form")
+      }
     },
   })
 
@@ -87,7 +92,7 @@ export default function ContactForm() {
           name={formField.name}
           children={(field) => {
             const isInvalid =
-              field.state.meta.isBlurred && !field.state.meta.isValid
+              field.state.meta.isTouched && !field.state.meta.isValid
 
             return (
               <Field data-invalid={isInvalid}>
@@ -134,6 +139,7 @@ export default function ContactForm() {
         <CustomButton
           icon={faPaperPlane}
           text={isSubmitting ? "SUBMITTING..." : "SEND MESSAGE"}
+          type="submit"
           isSubmitting={isSubmitting}
         />
       </div>

@@ -1,8 +1,3 @@
-"use server"
-
-import "server-only"
-import { redirect } from "next/navigation"
-
 interface Data {
   access_key: string
   name: string
@@ -11,6 +6,7 @@ interface Data {
 }
 
 export const contactFormAction = async (formData: Data) => {
+  console.log(formData)
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -24,11 +20,12 @@ export const contactFormAction = async (formData: Data) => {
     const data = await response.json()
 
     if (data.success) {
-      redirect("/")
+      return { success: true }
     }
 
-    console.log(data)
+    return { success: false, error: data.message || "Submission failed" }
   } catch (error) {
-    console.error(error)
+    console.error("Form submission error:", error)
+    return { success: false, error: "An error occurred" }
   }
 }

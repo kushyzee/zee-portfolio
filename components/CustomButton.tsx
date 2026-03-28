@@ -11,6 +11,7 @@ interface CustomButtonProps {
   isInLink?: boolean
   isOutLink?: boolean
   isSubmitting?: boolean
+  type?: "button" | "submit"
   icon: IconProp
 }
 
@@ -20,6 +21,7 @@ export default function CustomButton({
   isInLink,
   isOutLink,
   isSubmitting,
+  type,
   icon,
 }: CustomButtonProps) {
   const buttonClass =
@@ -70,7 +72,7 @@ export default function CustomButton({
       variant="outline"
       size="lg"
       className={buttonClass}
-      type={text === "SEND MESSAGE" ? "submit" : "button"}
+      type={type || "button"}
     >
       {text}
       <div className={iconClass}>
