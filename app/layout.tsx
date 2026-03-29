@@ -31,12 +31,12 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", poppins.className, notoSans.variable)}
+      className={cn("h-full antialiased", poppins.className, notoSans.variable)}
     >
-      <body className="relative p-5 pb-32">
+      <body className="relative min-h-svh px-5 pb-32 lg:px-10 lg:pb-8">
         <ThemeProvider>
           <NavMenu />
-          {children}
+          <main className="mx-auto h-full max-w-[1200]">{children}</main>
         </ThemeProvider>
       </body>
     </html>
