@@ -17,10 +17,10 @@ import { GlowingEffect } from "@/components/ui/glowing-effect"
 export default function Page() {
   return (
     <PageWrapper title="MY" highlight="PROJECTS">
-      <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-3 lg:gap-6">
         {projects.map((item, index) => (
           <Dialog key={item.name}>
-            <DialogTrigger className="relative h-full rounded-xl">
+            <DialogTrigger className="relative h-full rounded-2xl">
               <GlowingEffect
                 spread={80}
                 glow={true}
