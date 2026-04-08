@@ -25,35 +25,38 @@ const contactDetails = [
 export default function Page() {
   return (
     <PageWrapper title="GET IN" highlight="TOUCH">
-      <div>
-        <p className="text-muted-foreground">
-          Have a project in mind or want to chat? Send me a message and I will
-          get back to you.
-        </p>
-        <div className="mt-6 space-y-5">
-          {contactDetails.map((item) => (
-            <div key={item.label} className="flex items-center gap-4">
-              <FontAwesomeIcon
-                icon={item.icon}
-                size="2x"
-                className="text-primary"
-                widthAuto
-              />
-              <div>
-                <p>{item.label}</p>
-                <a
-                  href={item.link}
-                  className="text-primary transition-colors duration-200 ease-linear hover:text-primary/80 hover:underline"
-                >
-                  {item.text}
-                </a>
+      <div className="gap-20 lg:grid lg:grid-cols-2">
+        <div>
+          <p className="text-muted-foreground">
+            Have a project in mind or want to chat? Send me a message and I will
+            get back to you.
+          </p>
+          <div className="mt-6 space-y-5">
+            {contactDetails.map((item) => (
+              <div key={item.label} className="flex items-center gap-4">
+                <FontAwesomeIcon
+                  icon={item.icon}
+                  size="2x"
+                  className="text-primary"
+                  widthAuto
+                />
+                <div>
+                  <p>{item.label}</p>
+                  <a
+                    href={item.link}
+                    className="text-primary transition-colors duration-200 ease-linear hover:text-primary/80 hover:underline"
+                  >
+                    {item.text}
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <SocialMediaGroup />
         </div>
 
-        <SocialMediaGroup />
-        <div className="mt-8">
+        <div className="mt-8 lg:mt-0">
           <ContactForm />
         </div>
       </div>

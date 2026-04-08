@@ -36,7 +36,9 @@ export default function RootLayout({
       <body className="relative min-h-svh px-5 pb-32 lg:px-10 lg:pb-8">
         <ThemeProvider>
           <NavMenu />
-          <main className="mx-auto h-full max-w-[1200]">{children}</main>
+          <main className="mx-auto h-full max-w-2xl lg:max-w-[1200]">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

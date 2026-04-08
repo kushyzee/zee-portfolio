@@ -89,7 +89,7 @@ export function ProjectCardDialogFooter({
   github,
 }: ProjectCardDialogFooterProps) {
   return (
-    <div className="flex items-center justify-between gap-3">
+    <div className="flex w-full items-center justify-between gap-3">
       <CustomButton
         isOutLink
         link={live}

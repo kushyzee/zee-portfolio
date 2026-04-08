@@ -1,8 +1,12 @@
+"use client"
+
 import CustomButton from "@/components/CustomButton"
 import zee from "@/assets/images/zee.png"
 import Image from "next/image"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { TypewriterEffect } from "@/components/ui/typewriter-effect"
+import { motion } from "motion/react"
+import { pageVariants } from "@/components/PageWrapper"
 
 const words = [
   {
@@ -14,7 +18,13 @@ const words = [
 ]
 export default function Page() {
   return (
-    <div className="grid h-full grid-cols-1 items-center justify-items-center pt-20 lg:mr-20 lg:h-[calc(100svh-5rem)] lg:grid-cols-2 lg:justify-between lg:justify-items-normal lg:pt-8">
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="grid h-full grid-cols-1 items-center justify-items-center pt-20 lg:mr-20 lg:h-[calc(100svh-5rem)] lg:grid-cols-2 lg:justify-between lg:justify-items-normal lg:pt-8"
+    >
       <div className="relative h-60 w-60 rounded-full border-4 border-secondary lg:h-auto lg:w-96 lg:overflow-hidden lg:rounded-4xl">
         <Image
           src={zee}
@@ -47,6 +57,6 @@ export default function Page() {
           icon={faArrowRight}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
