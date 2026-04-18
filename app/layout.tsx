@@ -36,7 +36,7 @@ export default function RootLayout({
     >
       <body className="relative min-h-svh px-5 pb-32 lg:px-10 lg:pb-8">
         <ThemeProvider>
-          <div className="pointer-events-none fixed top-0 right-0 z-50 ml-auto flex w-full max-w-[1200] justify-end pt-5 pr-5 lg:pt-10 lg:pr-14">
+          <div className="pointer-events-none fixed top-0 right-0 left-0 z-50 mx-auto flex w-full max-w-2xl justify-end pt-5 pr-5 lg:max-w-[1400px] lg:pt-10 lg:pr-10">
             <DarkModeToggle />
           </div>
           <NavMenu />
