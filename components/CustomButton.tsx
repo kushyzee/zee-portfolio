@@ -34,6 +34,9 @@ export default function CustomButton({
     return (
       <Link
         href={link}
+        download={
+          link.endsWith(".pdf") ? "Arinze_Ogbuniba_Resume.pdf" : undefined
+        }
         className={cn(
           buttonVariants({ variant: "outline", size: "lg" }),
           buttonClass
