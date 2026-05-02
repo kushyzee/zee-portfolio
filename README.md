@@ -1,21 +1,24 @@
-# Next.js template
+# Zee Portfolio
 
-This is a Next.js template with shadcn/ui.
+A modern, interactive personal portfolio website built with Next.js, React, and Tailwind CSS.
 
-## Adding components
+## Live Preview
 
-To add components to your app, run the following command:
+Check out the live website here: [ZeePortfolio](https://zeeportfolio-six.vercel.app/)
 
-```bash
-npx shadcn@latest add button
-```
+## Features
 
-This will place the ui components in the `components` directory.
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS v4, shadcn/ui
+- **Animations**: Framer Motion (`motion`), `tw-animate-css`
+- **Icons**: FontAwesome, Lucide React, Iconify
+- **Forms**: `@web3forms/react` with `@tanstack/react-form`
+- **Typography & Components**: Modern design principles with a focus on functional, accessible UI components.
 
-## Using components
+## Technologies Used
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
-```
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Framer Motion](https://motion.dev/)
