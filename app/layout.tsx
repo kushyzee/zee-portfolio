@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import NavMenu from "@/features/navigation/components/NavMenu"
 import { Metadata } from "next"
 import { DarkModeToggle } from "@/components/DarkModeToggle"
+import { Toaster } from "@/components/ui/sonner"
 
 config.autoAddCss = false
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           <main className="mx-auto h-full max-w-2xl lg:max-w-[1200]">
             {children}
           </main>
+          <Toaster richColors duration={5000} position="top-right" />
         </ThemeProvider>
       </body>
     </html>

@@ -16,6 +16,7 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import { Textarea } from "@/components/ui/textarea"
 import { contactFormAction } from "../action"
 import { useRouter } from "next/navigation"
+import { toast } from "sonner"
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, { error: "Name is required" }),
@@ -69,9 +70,10 @@ export default function ContactForm() {
 
       const result = await contactFormAction(data)
       if (result?.success) {
+        toast.success("Message sent successfully!")
         router.push("/")
       } else {
-        alert(result.error || "Failed to submit form")
+        toast.error(result.error || "Failed to send message")
       }
     },
   })
